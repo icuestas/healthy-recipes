@@ -1,7 +1,7 @@
-import "./App.css";
+import { AppRouter } from "./AppRouter";
 
 function App() {
-  return <>Healthy Recipes</>;
+  return <AppRouter />;
 }
 
 export default App;
