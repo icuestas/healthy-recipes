@@ -1,7 +1,11 @@
 import { AppRouter } from "./AppRouter";
 
 function App() {
-  return <AppRouter />;
+  return (
+    <div className="flex justify-center bg-img-recipe">
+      <AppRouter />
+    </div>
+  );
 }
 
 export default App;
