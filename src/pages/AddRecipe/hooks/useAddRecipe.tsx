@@ -24,7 +24,6 @@ export const useAddRecipe = () => {
       value: string | RecipeIngredients[];
     };
   }) => {
-    console.log(typeof e, typeof e.target);
     const { name, value } = e.target;
     setForm((prevState: RecipeProps) => {
       return { ...prevState, [name]: value };
