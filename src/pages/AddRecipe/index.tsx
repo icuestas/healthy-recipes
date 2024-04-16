@@ -40,7 +40,7 @@ export const AddRecipe = () => {
           <Grid item lg={12} md={12} sm={12} xs={12}>
             <Autocomplete
               autoHighlight
-              onChange={(_, value) =>
+              onChange={(_, value: RecipeIngredients[]) =>
                 handleChange({ target: { name: "ingredients", value } })
               }
               multiple
