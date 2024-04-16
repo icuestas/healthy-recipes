@@ -38,6 +38,7 @@ export const AddRecipe = () => {
           </Grid>
           <Grid item lg={12} md={12} sm={12} xs={12}>
             <Autocomplete
+              autoHighlight
               onChange={(_, value) =>
                 handleChange({ target: { name: "ingredients", value } })
               }
@@ -70,12 +71,22 @@ export const AddRecipe = () => {
             />
           </Grid>
         </Grid>
-        <Grid container columnGap={2} className="flex justify-end mt-4">
-          <Grid item lg={4} md={4} sm={4} xs={4}>
-            <Button variant="contained" disabled={disableSubmitBtn()}>
-              Guardar Receta
-            </Button>
-          </Grid>
+        <Grid
+          container
+          lg={12}
+          md={12}
+          sm={12}
+          xs={12}
+          className="flex justify-end mt-4"
+        >
+          <Button
+            variant="contained"
+            disabled={disableSubmitBtn()}
+            color="success"
+            onClick={() => console.log(form)}
+          >
+            Guardar Receta
+          </Button>
         </Grid>
       </Paper>
     </Grid>
