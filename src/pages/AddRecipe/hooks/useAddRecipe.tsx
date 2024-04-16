@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { RecipeProps } from "../interfaces";
+import { RecipeIngredients, RecipeProps } from "../interfaces";
 
 export const useAddRecipe = () => {
   const [form, setForm] = useState<RecipeProps>({
@@ -18,7 +18,13 @@ export const useAddRecipe = () => {
     else return false;
   }, [form]);
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: {
+    target: {
+      name: string;
+      value: string | RecipeIngredients[];
+    };
+  }) => {
+    console.log(typeof e, typeof e.target);
     const { name, value } = e.target;
     setForm((prevState: RecipeProps) => {
       return { ...prevState, [name]: value };

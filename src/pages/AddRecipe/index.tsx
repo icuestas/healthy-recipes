@@ -7,6 +7,7 @@ import {
   Button,
 } from "@mui/material";
 import { useAddRecipe } from "./hooks/useAddRecipe";
+import { RecipeIngredients } from "./interfaces";
 
 export const AddRecipe = () => {
   const { form, handleChange, disableSubmitBtn } = useAddRecipe();
@@ -45,9 +46,7 @@ export const AddRecipe = () => {
               multiple
               filterSelectedOptions
               fullWidth
-              getOptionLabel={(option: { name: string; id: string }) =>
-                option.name
-              }
+              getOptionLabel={(option: RecipeIngredients) => option.name}
               renderInput={(params) => (
                 <TextField {...params} label={"Ingredientes"} />
               )}
